@@ -3,7 +3,7 @@
 $TargetRegistry = [string]$Args
 
 $AuditUser = "Everyone"
-$AuditRules = "{{ harden_win_RegAuditRules }}"
+$AuditRules = "{{ win_RegAuditRules }}"
 $InheritType = "ContainerInherit,ObjectInherit"
 $AuditPropagationFlags = "None"
 $AuditType = "Success"
