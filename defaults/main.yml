@@ -1,0 +1,29 @@
+---
+
+win_temp_dir: 'c:\Program Files\ansible'
+win_log_dir: 'c:\ProgramData\ansible\log'
+
+## Warning! Enabling all those will generate *lot* of logs
+win_auditpol_enable:
+  - Account Logon
+  - Object Access
+  - Privilege Use
+  - Detailed Tracking
+  - Policy Change
+  - DS Access
+
+# https://technet.microsoft.com/en-us/library/ff730951.aspx
+win_audit_files: true
+win_FileAuditRules: "Write,WriteData,Delete,DeleteSubdirectoriesAndFiles,ChangePermissions,Takeownership"
+win_audit_filepaths:
+  - C:\Users\Administrator\AppData\Local
+  - C:\Users\Administrator\AppData\Roaming
+  - C:\Users\Public
+  - C:\Windows\System32\drivers\etc\hosts
+
+win_audit_registry: true
+win_RegAuditRules: "SetValue,Delete,ChangePermissions,TakeOwnership"
+win_audit_regpaths:
+  - 'HKCU:\Control Panel\Desktop'
+  - 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run'
+  - 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce'
