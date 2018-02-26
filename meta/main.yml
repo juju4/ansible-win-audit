@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: juju4
-  description: setup host firewall on windows system
+  description: setup Windows auditing
   license: BSD
   min_ansible_version: 2.4
   platforms:
