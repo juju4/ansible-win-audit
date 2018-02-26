@@ -1,7 +1,7 @@
 ---
 
-- include_tasks: windows-audit.yml
-- include_tasks: windows-audit-files.yml
+- include: windows-audit.yml
+- include: windows-audit-files.yml
   when: win_audit_files
-- include_tasks: windows-audit-reg.yml
+- include: windows-audit-reg.yml
   when: win_audit_registry

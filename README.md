@@ -12,7 +12,8 @@ Ansible role to setup audit on windows system.
 
 ### Ansible
 It was tested on the following versions:
- * 2.4 (required since s/include:/include_tasks:/)
+ * 2.3
+ * 2.4
 
 ### Operating systems
 
