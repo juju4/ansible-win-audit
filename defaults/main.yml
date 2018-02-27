@@ -10,7 +10,16 @@ win_auditpol_enable:
   - Privilege Use
   - Detailed Tracking
   - Policy Change
-  - DS Access
+#  - DS Access
+
+win_auditpol_subcat_enable:
+  - { cat: 'Account Management', sub: 'Application Group Management', fail: true, success: true }
+  - { cat: 'Account Management', sub: 'Computer Account Management', fail: true, success: true }
+  - { cat: 'Account Management', sub: 'Distribution Group Management', fail: true, success: true }
+  - { cat: 'Account Management', sub: 'Security Group Management', fail: true, success: true }
+  - { cat: 'Account Management', sub: 'User Account Management', fail: false, success: true }
+  - { cat: 'DS Access', sub: 'Directory Service Changes', fail: false, success: true }
+  - { cat: 'DS Access', sub: 'Directory Service Replication', fail: false, success: true }
 
 # https://technet.microsoft.com/en-us/library/ff730951.aspx
 win_audit_files: true
