@@ -28,8 +28,8 @@ win_auditpol_subcat_enable:
   - { cat: 'DS Access', sub: 'Directory Service Changes', fail: false, success: true }
   - { cat: 'DS Access', sub: 'Directory Service Replication', fail: false, success: true }
   - { cat: 'Object Access', sub: 'Removable Storage', fail: true, success: true }
-  - { cat: 'Logon/Logoff', sub: 'Group Membership', fail: false, success: true }
-  - { cat: 'Detailed Tracking', sub: 'PNP Activity', fail: false, success: true }
+#  - { cat: 'Logon/Logoff', sub: 'Group Membership', fail: false, success: true }
+#  - { cat: 'Detailed Tracking', sub: 'PNP Activity', fail: false, success: true }
   - { cat: 'System', sub: 'IPSec Driver', fail: true, success: true }
   - { cat: 'System', sub: 'Security System Extension', fail: true, success: true }
 #  - { cat: '', sub: '', fail: true, success: true }
