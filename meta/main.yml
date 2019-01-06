@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: win_audit
   author: juju4
   description: setup Windows auditing
   license: BSD
