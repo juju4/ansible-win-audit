@@ -7,4 +7,3 @@
     value: SpecialGroups
     data: "{{ win_audit_specialgroups_sid | default('') }}"
     datatype: string
-

@@ -206,4 +206,3 @@ win_audit_regpaths_exclude:
   - { k: 'HKLM:\SYSTEM\CurrentControlSet\services\SharedAccess\Epoch', i: 'ContainerInherit' }
   - { k: 'HKLM:\SYSTEM\CurrentControlSet\services\Shared Access\Epoch2', i: 'ContainerInherit' }
   - { k: 'HKLM:\SYSTEM\CurrentControlSet\services\rdyboost\Parameters', i: 'ContainerInherit' }
-
