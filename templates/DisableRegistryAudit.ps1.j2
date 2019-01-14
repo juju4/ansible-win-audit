@@ -1,4 +1,4 @@
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 # https://stackoverflow.com/questions/32585386/how-to-remove-registry-audit-rules
 if ($Args.count -eq 1) {
 $TargetRegistry = [string]$Args
