@@ -13,8 +13,6 @@ win_auditpol_enable:
   - Detailed Tracking
   - Policy Change
 #  - DS Access
-# https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-account-logon-events
-  - Other Account Logon Events
 
 win_auditpol_subcat_enable:
   - { cat: 'Account Management', sub: 'Application Group Management', fail: true, success: true }
@@ -32,6 +30,8 @@ win_auditpol_subcat_enable:
 #  - { cat: 'Detailed Tracking', sub: 'PNP Activity', fail: false, success: true }
   - { cat: 'System', sub: 'IPSec Driver', fail: true, success: true }
   - { cat: 'System', sub: 'Security System Extension', fail: true, success: true }
+# https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-account-logon-events
+  - { cat: 'Account Logon', sub: 'Other Account Logon Events', fail: true, success: true }
 #  - { cat: '', sub: '', fail: true, success: true }
 # For DC
 # https://adsecurity.org/wp-content/uploads/2017/04/2017-BSidesCharm-DetectingtheElusive-ActiveDirectoryThreatHunting-Final.pdf p50
