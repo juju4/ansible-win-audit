@@ -57,6 +57,10 @@ $ ansible -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory -
 
 ## FAQ
 
+Reference links
+* https://posts.specterops.io/hunting-with-active-directory-replication-metadata-1dab2f681b19
+* https://social.technet.microsoft.com/wiki/contents/articles/25946.metadata-de-replication-et-analyse-forensic-active-directory-fr-fr.aspx
+
 ## License
 
 BSD 2-clause
