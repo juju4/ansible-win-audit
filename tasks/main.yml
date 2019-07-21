@@ -10,6 +10,6 @@
 
 - include: windows-audit.yml
 - include: windows-audit-files.yml
-  when: win_audit_files
+  when: win_audit_files|bool
 - include: windows-audit-reg.yml
-  when: win_audit_registry
+  when: win_audit_registry|bool
