@@ -9,4 +9,5 @@
   win_shell: "Powershell -Exec Bypass -File \"{{ win_temp_dir }}\\EnableFileAudit.ps1\" \"{{ item }}\""
   with_items: "{{ win_audit_filepaths }}"
   register: setacl_results
-- debug: var=setacl_results
+- name: Debug | setacl_results
+  debug: var=setacl_results

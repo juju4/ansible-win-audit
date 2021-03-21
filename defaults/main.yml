@@ -12,7 +12,7 @@ win_auditpol_enable:
   - Privilege Use
   - Detailed Tracking
   - Policy Change
-#  - DS Access
+  # - DS Access
 
 win_auditpol_subcat_enable:
   - { cat: 'Account Management', sub: 'Application Group Management', fail: true, success: true }
@@ -26,47 +26,48 @@ win_auditpol_subcat_enable:
   - { cat: 'DS Access', sub: 'Directory Service Changes', fail: false, success: true }
   - { cat: 'DS Access', sub: 'Directory Service Replication', fail: false, success: true }
   - { cat: 'Object Access', sub: 'Removable Storage', fail: true, success: true }
-#  - { cat: 'Logon/Logoff', sub: 'Group Membership', fail: false, success: true }
-#  - { cat: 'Detailed Tracking', sub: 'PNP Activity', fail: false, success: true }
+  # - { cat: 'Logon/Logoff', sub: 'Group Membership', fail: false, success: true }
+  # - { cat: 'Detailed Tracking', sub: 'PNP Activity', fail: false, success: true }
   - { cat: 'System', sub: 'IPSec Driver', fail: true, success: true }
   - { cat: 'System', sub: 'Security System Extension', fail: true, success: true }
-# https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-account-logon-events
+  # https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-account-logon-events
   - { cat: 'Account Logon', sub: 'Other Account Logon Events', fail: true, success: true }
-#  - { cat: '', sub: '', fail: true, success: true }
-# For DC
+  # - { cat: '', sub: '', fail: true, success: true }
+  # For DC
+
 # https://adsecurity.org/wp-content/uploads/2017/04/2017-BSidesCharm-DetectingtheElusive-ActiveDirectoryThreatHunting-Final.pdf p50
-#win_auditpol_subcat_enable:
-#  - { cat: 'Account Logon', sub: 'Credential Validation', fail: true, success: true }
-#  - { cat: 'Account Logon', sub: 'Kerberos Authentication Service', fail: true, success: true }
-#  - { cat: 'Account Logon', sub: 'Kerberos Service Ticket Operations', fail: true, success: true }
-#  - { cat: 'Account Management', sub: 'Application Group Management', fail: true, success: true }
-#  - { cat: 'Account Management', sub: 'Computer Account Management', fail: true, success: true }
-#  - { cat: 'Account Management', sub: 'Other Account Management', fail: true, success: true }
-#  - { cat: 'Account Management', sub: 'Distribution Group Management', fail: true, success: true }
-#  - { cat: 'Account Management', sub: 'Security Group Management', fail: true, success: true }
-#  - { cat: 'Account Management', sub: 'User Account Management', fail: true, success: true }
-#  - { cat: 'Detailed Tracking', sub: 'DPAPI Activity', fail: true, success: true }
-#  - { cat: 'Detailed Tracking', sub: 'Process Creation', fail: true, success: true }
-#  - { cat: 'DS Access', sub: 'Directory Service Access', fail: true, success: true }
-#  - { cat: 'DS Access', sub: 'Directory Service Changes', fail: true, success: true }
-#  - { cat: 'Logon and Logoff', sub: 'Account Lockout', fail: false, success: true }
-#  - { cat: 'Logon and Logoff', sub: 'Logoff', fail: false, success: true }
-#  - { cat: 'Logon and Logoff', sub: 'Logon', fail: true, success: true }
-#  - { cat: 'Logon and Logoff', sub: 'Special Logon', fail: true, success: true }
-#  - { cat: 'System', sub: 'IPSec Driver', fail: true, success: true }
-#  - { cat: 'System', sub: 'Security State Change', fail: true, success: true }
-#  - { cat: 'System', sub: 'Security System Extension', fail: true, success: true }
-#  - { cat: 'System', sub: 'Security System Integrity', fail: true, success: true }
+# win_auditpol_subcat_enable:
+#   - { cat: 'Account Logon', sub: 'Credential Validation', fail: true, success: true }
+#   - { cat: 'Account Logon', sub: 'Kerberos Authentication Service', fail: true, success: true }
+#   - { cat: 'Account Logon', sub: 'Kerberos Service Ticket Operations', fail: true, success: true }
+#   - { cat: 'Account Management', sub: 'Application Group Management', fail: true, success: true }
+#   - { cat: 'Account Management', sub: 'Computer Account Management', fail: true, success: true }
+#   - { cat: 'Account Management', sub: 'Other Account Management', fail: true, success: true }
+#   - { cat: 'Account Management', sub: 'Distribution Group Management', fail: true, success: true }
+#   - { cat: 'Account Management', sub: 'Security Group Management', fail: true, success: true }
+#   - { cat: 'Account Management', sub: 'User Account Management', fail: true, success: true }
+#   - { cat: 'Detailed Tracking', sub: 'DPAPI Activity', fail: true, success: true }
+#   - { cat: 'Detailed Tracking', sub: 'Process Creation', fail: true, success: true }
+#   - { cat: 'DS Access', sub: 'Directory Service Access', fail: true, success: true }
+#   - { cat: 'DS Access', sub: 'Directory Service Changes', fail: true, success: true }
+#   - { cat: 'Logon and Logoff', sub: 'Account Lockout', fail: false, success: true }
+#   - { cat: 'Logon and Logoff', sub: 'Logoff', fail: false, success: true }
+#   - { cat: 'Logon and Logoff', sub: 'Logon', fail: true, success: true }
+#   - { cat: 'Logon and Logoff', sub: 'Special Logon', fail: true, success: true }
+#   - { cat: 'System', sub: 'IPSec Driver', fail: true, success: true }
+#   - { cat: 'System', sub: 'Security State Change', fail: true, success: true }
+#   - { cat: 'System', sub: 'Security System Extension', fail: true, success: true }
+#   - { cat: 'System', sub: 'Security System Integrity', fail: true, success: true }
 
 # https://blogs.technet.microsoft.com/jepayne/2015/11/26/tracking-lateral-movement-part-one-special-groups-and-specific-service-accounts/
 win_audit_specialgroups_sid:
-# Local Accounts
-  - S-1-5-113 
-# Domain Admins: 
-#  - S-1-5-21-[DOMAIN]-512
-# Enterprise Admins: 
-#  - S-1-5-21-[FORESTROOTDOMAIN]-519
-# Administrators (Could be noisy) 
+  # Local Accounts
+  - S-1-5-113
+  # Domain Admins:
+  # - S-1-5-21-[DOMAIN]-512
+  # Enterprise Admins:
+  # - S-1-5-21-[FORESTROOTDOMAIN]-519
+  # Administrators (Could be noisy)
   - S-1-5-32-544
 
 # https://technet.microsoft.com/en-us/library/ff730951.aspx
@@ -88,19 +89,19 @@ win_audit_regpaths:
   - { k: 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe', i: 'ContainerInherit' }
   - { k: 'HKLM:\SOFTWARE\Microsoft\Windows Defender\Exclusions\Paths', i: 'ContainerInherit' }
   - { k: 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server', i: 'ContainerInherit' }
-# https://www.malwarearchaeology.com/logging/
-# https://static1.squarespace.com/static/552092d5e4b0661088167e5c/t/5a00963153450a8779b23489/1509987890282/Windows+Registry+Auditing+Cheat+Sheet+ver+Nov+2017.pdf
-# Note: didn't replicate User per sid keys
-# THIS KEY ONLY: (none)
+  # https://www.malwarearchaeology.com/logging/
+  # https://static1.squarespace.com/static/552092d5e4b0661088167e5c/t/5a00963153450a8779b23489/1509987890282/Windows+Registry+Auditing+Cheat+Sheet+ver+Nov+2017.pdf
+  # Note: didn't replicate User per sid keys
+  # THIS KEY ONLY: (none)
   - { k: 'USERS:\.DEFAULT\Control Panel\Desktop', i: 'None' }
-# THIS KEY AND SUBKEYS: (containerinherit)
+  # THIS KEY AND SUBKEYS: (containerinherit)
   - { k: 'USERS:\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run', i: 'ContainerInherit' }
   - { k: 'USERS:\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\RunOnce', i: 'ContainerInherit' }
   - { k: 'USERS:\.DEFAULT\Software\Microsoft\Office\Outlook\Addins', i: 'ContainerInherit' }
   - { k: 'USERS:\.DEFAULT\Software\Microsoft\Office\PowerPoint\Addins', i: 'ContainerInherit' }
   - { k: 'USERS:\.DEFAULT\Software\Microsoft\Office\Word\Addins', i: 'ContainerInherit' }
   - { k: 'USERS:\.DEFAULT\Software\Microsoft\Internet Explorer\UrlSearchHooks', i: 'ContainerInherit' }
-# THIS KEY ONLY: (none)
+  # THIS KEY ONLY: (none)
   - { k: 'HKLM:\Software\Microsoft\WBEM\CIMOM', i: 'None' }
   - { k: 'HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs', i: 'None' }
   - { k: 'HKLM:\System\CurrentControlSet\Control', i: 'None' }
@@ -109,7 +110,7 @@ win_audit_regpaths:
   - { k: 'HKLM:\System\CurrentControlSet\Control\SecurityProviders\SecurityProviders\WDigest', i: 'None' }
   - { k: 'HKLM:\System\CurrentControlSet\Control\Terminal Server\Wds\rdpwd', i: 'None' }
   - { k: 'HKLM:\System\CurrentControlSet\Control\Terminal Server\AddIns', i: 'None' }
-# THIS KEYAND ALL SUBKEYS: (containerinherit)
+  # THIS KEYAND ALL SUBKEYS: (containerinherit)
   - { k: 'HKLM:\Software\Classes\*\ShellEx', i: 'ContainerInherit' }
   - { k: 'HKLM:\Software\Classes\AllFileSystemObjects\ShellEx', i: 'ContainerInherit' }
   - { k: 'HKLM:\Software\Classes\Directory\ShellEx', i: 'ContainerInherit' }
@@ -138,7 +139,7 @@ win_audit_regpaths:
   - { k: 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers', i: 'ContainerInherit' }
   - { k: 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Authentication\Credential Provider Filters', i: 'ContainerInherit' }
   - { k: 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Authentication\PLAP Providers', i: 'ContainerInherit' }
-# THIS KEY AND ALL SUBKEYS: (containerinherit)
+  # THIS KEY AND ALL SUBKEYS: (containerinherit)
   - { k: 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer\ShellServiceObjects', i: 'ContainerInherit' }
   - { k: 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers', i: 'ContainerInherit' }
   - { k: 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks', i: 'ContainerInherit' }
@@ -192,7 +193,7 @@ win_audit_regpaths:
   - { k: 'HKLM:\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug', i: 'ContainerInherit' }
   - { k: 'HKLM:\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32', i: 'ContainerInherit' }
   - { k: 'HKLM:\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options', i: 'ContainerInherit' }
-# MUICACHE
+  # MUICACHE
   - { k: 'HKCU:\Software\Microsoft\Windows\ShellNoRoam\MUICache', i: 'ContainerInherit' }
   - { k: 'HKCU:\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MUICache', i: 'ContainerInherit' }
   - { k: 'HKCR:\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MUICache', i: 'ContainerInherit' }
