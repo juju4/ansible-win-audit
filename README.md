@@ -1,6 +1,3 @@
-[![Build Status - Master](https://travis-ci.org/juju4/ansible-win-audit.svg?branch=master)](https://travis-ci.org/juju4/ansible-win-audit)
-[![Build Status - Devel](https://travis-ci.org/juju4/ansible-win-audit.svg?branch=devel)](https://travis-ci.org/juju4/ansible-win-audit/branches)(Syntax Only)
-
 [![Appveyor - Master](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-audit)
 ![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3/branch/devel?svg=true)
 
