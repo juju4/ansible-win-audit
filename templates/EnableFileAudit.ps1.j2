@@ -6,7 +6,7 @@
 $TargetFolder = [string]$Args
 
 $AuditUser = "Everyone"
-$AuditRules = "{{ win_FileAuditRules }}"
+$AuditRules = "{{ win_fileauditrules }}"
 $InheritType = "ContainerInherit,ObjectInherit"
 $AuditType = "Success"
 $AccessRule = New-Object System.Security.AccessControl.FileSystemAuditRule($AuditUser,$AuditRules,$InheritType,"None",$AuditType)

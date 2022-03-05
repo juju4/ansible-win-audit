@@ -9,7 +9,7 @@ $InheritType = [string]$($Args[2])
 }
 
 $AuditUser = "Everyone"
-$AuditRules = "{{ win_RegAuditRules }}"
+$AuditRules = "{{ win_regauditrules }}"
 $AuditPropagationFlags = "None"
 $AuditType = "Success"
 $AuditRule = New-Object System.Security.AccessControl.RegistryAuditRule ($AuditUser,$AuditRules,$InheritType,$AuditPropagationFlags,$AuditType)
