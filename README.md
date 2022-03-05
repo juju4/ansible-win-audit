@@ -1,5 +1,5 @@
-[![Appveyor - master](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/master)
-[![Appveyor - devel](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/devel)
+[![Appveyor - master](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-audit/branch/master)
+[![Appveyor - devel](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-audit/branch/devel)
 
 # Windows audit ansible role
 
