@@ -1,5 +1,5 @@
-[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-audit)
-![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3/branch/devel?svg=true)
+[![Appveyor - master](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/master)
+[![Appveyor - devel](https://ci.appveyor.com/api/projects/status/y6thcpaynaf2t9i3/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/devel)
 
 # Windows audit ansible role
 
@@ -11,7 +11,9 @@ Ansible role to setup audit on windows system.
 It was tested on the following versions:
  * 2.3 (Not working! [ansible#23940](https://github.com/ansible/ansible/issues/23940) = template upload failing)
  * 2.4
- * 2.5b2
+ * 2.5
+ * 4.10.0
+ * 5.3.0
 
 ### Operating systems
 
@@ -25,7 +27,7 @@ For example
 ```
 - host: all
   roles:
-    - juju4.win-audit
+    - juju4.win_audit
 ```
 
 Run
@@ -43,7 +45,7 @@ See defaults/main.yml for full scope
 This role has a travis basic test (for github, syntax check only), Appveyor test and a Vagrantfile (test/vagrant).
 
 ```
-$ cd /path/to/roles/juju4.win-audit/test/vagrant
+$ cd /path/to/roles/juju4.win_audit/test/vagrant
 $ vagrant up
 $ vagrant provision
 $ vagrant destroy
