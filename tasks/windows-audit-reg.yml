@@ -10,7 +10,7 @@
   with_items: "{{ win_audit_regpaths }}"
   register: setacl_results
 - name: Debug | setacl_results
-  debug: var=setacl_results
+  ansible.builtin.debug: var=setacl_results
 
 - name: upload Disable Registry Auditing script
   win_template:
@@ -22,4 +22,4 @@
   with_items: "{{ win_audit_regpaths_exclude }}"
   register: setacl_results
 - name: Debug | setacl_results
-  debug: var=setacl_results
+  ansible.builtin.debug: var=setacl_results

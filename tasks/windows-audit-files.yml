@@ -10,4 +10,4 @@
   with_items: "{{ win_audit_filepaths }}"
   register: setacl_results
 - name: Debug | setacl_results
-  debug: var=setacl_results
+  ansible.builtin.debug: var=setacl_results
